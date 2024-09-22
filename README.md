@@ -1,0 +1,1 @@
+# plugins-video-embed-thumbnail-generator
