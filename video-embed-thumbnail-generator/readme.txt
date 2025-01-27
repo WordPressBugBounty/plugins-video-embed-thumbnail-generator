@@ -3,9 +3,9 @@ Contributors: kylegilman
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=kylegilman@gmail.com&item_name=Videopack%20Plugin%20Donation
 Tags: video, video player, video gallery, thumbnail, resolutions
 Requires at least: 5.0
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 7.2
-Stable tag: 4.10.2
+Stable tag: 4.10.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -104,6 +104,11 @@ Enter the username & password in the Videopack settings page, "FFMPEG Settings" 
 4. Shortcode inserted into the post content by the plugin.
 
 == Changelog ==
+
+= 4.10.3 - Januray 27, 2025 =
+* Fixed bug that left FFMPEG settings enabled when FFMPEG is not present on server.
+* Fixed bug that limited the list of users to email encoding errors to.
+* Updated Video.js to v8.20.0, Freemius SDK to v2.11.0, and Symfony/Process to v5.4.47
 
 = 4.10.2 - May 8, 2024 =
 * Fixed bug that prevented disabling the "Set all videos to expand to 100% of their containers" setting.
