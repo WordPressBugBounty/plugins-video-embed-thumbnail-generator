@@ -3,9 +3,9 @@ Contributors: kylegilman
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=kylegilman@gmail.com&item_name=Videopack%20Plugin%20Donation
 Tags: video, video player, video gallery, thumbnail, resolutions
 Requires at least: 5.0
-Tested up to: 6.6
+Tested up to: 6.9
 Requires PHP: 7.2
-Stable tag: 4.10.4
+Stable tag: 4.10.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -104,6 +104,13 @@ Enter the username & password in the Videopack settings page, "FFMPEG Settings" 
 4. Shortcode inserted into the post content by the plugin.
 
 == Changelog ==
+
+= 4.10.5 - January 24, 2026 =
+* Fixed bug that caused 404 errors when WordPress Default Player is selected.
+* Fixed bug that incorrectly formatted thumbnails when set to display when video ends.
+* Fixed bug that prevented disabling "Show Download Link" on the settings page.
+* Fixed bug that triggered _load_textdomain_just_in_time too early.
+* Updated dependencies Video.js, Freemius SDK, and Symfony/Process.
 
 = 4.10.4 - July 11, 2025 =
 * Security update to fix XSS vulnerability in popup video gallery.
