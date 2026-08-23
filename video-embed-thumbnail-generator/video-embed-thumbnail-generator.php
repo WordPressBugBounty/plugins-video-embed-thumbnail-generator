@@ -11,11 +11,13 @@
  * Plugin Name: Videopack
  * Plugin URI: https://www.videopack.video/
  * Description: Makes video thumbnails, allows resolution switching, and embeds responsive self-hosted videos and galleries.
- * Version: 4.10.5
+ * Version: 4.10.6
  * Author: Kyle Gilman
  * Author URI: https://www.kylegilman.net/
  * Text Domain: video-embed-thumbnail-generator
  * Domain Path: /languages
+ * License: GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,7 +41,7 @@
  *    Website: http://justingable.com/2008/10/03/modifying-wordpress-default-method-for-inserting-media/
  * 4) Includes Video-JS Player
  * Website: http://www.videojs.com/
- * License: http://www.gnu.org/licenses/lgpl.html
+ * Licensed under LGPL, see http://www.gnu.org/licenses/lgpl.html
  * 5) Includes code adapted from Kathy Darling's custom solution for saving thumbnails
  * Website: http://www.kathyisawesome.com/
  * 6) Includes Dominic's Video.js Resolution Selector
@@ -59,7 +61,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		define( 'VIDEOPACK_BASENAME', plugin_basename( __FILE__ ) );
 	}
 	if ( ! defined( 'VIDEOPACK_VERSION' ) ) {
-		define( 'VIDEOPACK_VERSION', '4.10.5' );
+		define( 'VIDEOPACK_VERSION', '4.10.6' );
 	}
 	if ( ! defined( 'VIDEOPACK_FREEMIUS_ENABLED' ) ) {
 		define( 'VIDEOPACK_FREEMIUS_ENABLED', true );
@@ -224,21 +226,6 @@ function kgvid_uninstall_plugin() {
 		}
 	}
 }
-
-function kgvid_videopack_fs_loaded() {
-	// add Freemius customizations after Freemius is loaded
-
-	if ( function_exists( 'videopack_fs' ) ) {
-
-		videopack_fs()->override_i18n(
-			array(
-				'yee-haw' => 'Great',
-				'woot'    => 'Great',
-			)
-		);
-	}
-}
-add_action( 'videopack_fs_loaded', 'kgvid_videopack_fs_loaded' );
 
 if ( VIDEOPACK_FREEMIUS_ENABLED && file_exists( __DIR__ . '/vendor/freemius/wordpress-sdk/start.php' ) && ! function_exists( 'videopack_fs' ) ) {
 	// Create a helper function for easy SDK access.

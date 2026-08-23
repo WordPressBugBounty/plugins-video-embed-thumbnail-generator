@@ -2,10 +2,10 @@
 Contributors: kylegilman
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=kylegilman@gmail.com&item_name=Videopack%20Plugin%20Donation
 Tags: video, video player, video gallery, thumbnail, resolutions
-Requires at least: 5.0
-Tested up to: 6.9
+Requires at least: 5.9
+Tested up to: 7.1
 Requires PHP: 7.2
-Stable tag: 4.10.5
+Stable tag: 4.10.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -104,6 +104,19 @@ Enter the username & password in the Videopack settings page, "FFMPEG Settings" 
 4. Shortcode inserted into the post content by the plugin.
 
 == Changelog ==
+
+= 4.10.6 - August 23, 2026 =
+* Security fix: restricted the kgvid_count_play AJAX handler to a play-counter allowlist to prevent unauthenticated overwriting of attachment metadata.
+* Security fix: added missing and stricter capability checks across admin AJAX handlers to prevent lower-privileged or unauthorized users from triggering encoding, thumbnail generation, post reparenting, deletion, or other users' encode jobs.
+* Security hardening: added direct file access protection to several plugin files.
+* Fixed incorrect plugin license header and a few missing/mismatched translation text domains.
+* Fixed bug that appended an unstable "?id=" query string to video source URLs, which could cause the same video to be indexed by search engines multiple times.
+* Fixed bug that hid the thumbnail generation controls in the Media Library for Authors and other non-Editor roles viewing their own uploaded videos.
+* Fixed bug that could show incorrect users in the error notification email dropdown on the settings page.
+* Fixed bug that caused a fatal error when video posts are duplicated.
+* Fixed bug that triggered _load_textdomain_just_in_time (again).
+* Added 'videopack_save_thumb_location' filter to set thumbnails to save to a custom location.
+* Updated dependencies Video.js, Freemius SDK, and Symfony/Process
 
 = 4.10.5 - January 24, 2026 =
 * Fixed bug that caused 404 errors when WordPress Default Player is selected.
